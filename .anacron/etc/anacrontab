@@ -1,0 +1,13 @@
+# $HOME/.anacron/etc/anacrontab: configuration file for anacron
+
+# See anacron(8) and anacrontab(5) for details.
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+HOME=/home/danpf
+LOGNAME=annacronda
+
+# These replace cron's entries
+1	5	cron.daily	run-parts --report $HOME/.anacron/etc/cron.daily
+7	10	cron.weekly	run-parts --report $HOME/.anacron/etc/cron.weekly
+@monthly	15	cron.monthly	run-parts --report $HOME/.anacron/etc/cron.monthly
